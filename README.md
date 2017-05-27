@@ -1,2 +1,2 @@
 # webpack
-teste webpack
+teste webpack2
