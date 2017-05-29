@@ -1,7 +1,7 @@
 <template>
   <div class="calendar">
     <h1>Agenda: {{ msg }}</h1>
-    <input type="text" v-model="msg">
+    <input id="selector" type="text" v-model="msg">
     <ul>
       <li v-for="serv in services">{{ serv.name }}</li>
     </ul>
@@ -11,6 +11,7 @@
 
 <script>
 import Moment from 'moment';
+import Inputmask from 'inputmask';
 
 export default {
   name: 'calendar',
@@ -32,6 +33,11 @@ export default {
     checkout() {
       this.msg = 'trocou!!!';
       this.services.push({ name: 'servico 3' });
+
+      const selector = document.getElementById('selector');
+
+      const im = new Inputmask('99-9999999');
+      im.mask(selector);
     },
   },
 };
