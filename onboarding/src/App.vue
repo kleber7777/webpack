@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <ul>
+      <li>
+        <a href="#/calendar">Agenda</a>
+      </li>
+      <li>
+        <a href="#/hello">Hello</a>
+      </li>
+    </ul>
     <router-view></router-view>
   </div>
 </template>
