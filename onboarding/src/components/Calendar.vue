@@ -10,11 +10,13 @@
 </template>
 
 <script>
+import Moment from 'moment';
+
 export default {
   name: 'calendar',
   data() {
     return {
-      msg: 'Hello World',
+      msg: Moment().format(),
       available: true,
       services: [
         {
