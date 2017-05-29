@@ -1,12 +1,19 @@
 <template lang="pug">
-  p aqui
+  p {{ msg }}
 </template>
 
 <script>
   export default {
     name: 'modalNew',
     data() {
-      return {};
+      return {
+        msg: 'aqui',
+      };
+    },
+    methods: {
+      openModal() {
+        this.msg = 'testeteste';
+      },
     },
   };
 </script>
