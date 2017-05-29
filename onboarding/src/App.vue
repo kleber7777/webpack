@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <modal-new></modal-new>
     <ul>
       <li>
         <a href="#/calendar">Agenda</a>
@@ -13,8 +14,13 @@
 </template>
 
 <script>
+import ModalNew from '@/components/ModalNew';
+
 export default {
   name: 'app',
+  components: {
+    ModalNew,
+  },
 };
 </script>
 
