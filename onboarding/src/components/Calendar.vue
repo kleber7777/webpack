@@ -1,8 +1,8 @@
 <template>
   <div class="calendar">
-    <h1>Agenda: {{ msg }}</h1>
+    <h1>Agenda:</h1>
     <input id="selector" type="text" v-model="msg">
-    <ul>
+    <ul id="listServices">
       <li v-for="serv in services">{{ serv.name }}</li>
     </ul>
     <button v-if="available" type="button" @click="checkout()">click</button>
