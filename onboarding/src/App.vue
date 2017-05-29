@@ -5,7 +5,7 @@
         <a href="#/calendar">Agenda</a>
       </li>
       <li>
-        <a href="#/hello">Hello</a>
+        <a href="#/clients">Clientes</a>
       </li>
     </ul>
     <router-view></router-view>
