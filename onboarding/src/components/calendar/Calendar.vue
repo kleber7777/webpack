@@ -8,37 +8,37 @@
 </template>
 
 <script>
-  import Moment from 'moment';
-  import Inputmask from 'inputmask';
+  import Moment from 'moment'
+  import Inputmask from 'inputmask'
 
   export default {
     name: 'calendar',
-    data() {
+    data () {
       return {
         msg: Moment().format(),
         available: true,
         services: [
           {
-            name: 'servico 1',
+            name: 'servico 1'
           },
           {
-            name: 'servico 2',
-          },
-        ],
-      };
+            name: 'servico 2'
+          }
+        ]
+      }
     },
     methods: {
-      checkout() {
-        this.msg = 'trocou!!!';
-        this.services.push({ name: 'servico 3' });
+      checkout () {
+        this.msg = 'trocou!!!'
+        this.services.push({ name: 'servico 3' })
 
-        const selector = document.getElementById('selector');
+        const selector = document.getElementById('selector')
 
-        const im = new Inputmask('99-9999999');
-        im.mask(selector);
-      },
-    },
-  };
+        const im = new Inputmask('99-9999999')
+        im.mask(selector)
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

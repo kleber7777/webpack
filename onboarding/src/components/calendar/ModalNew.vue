@@ -5,17 +5,17 @@
 <script>
   export default {
     name: 'modalNew',
-    data() {
+    data () {
       return {
-        msg: 'aqui',
-      };
+        msg: 'aqui'
+      }
     },
     methods: {
-      openModal() {
-        this.msg = 'testeteste';
-      },
-    },
-  };
+      openModal () {
+        this.msg = 'testeteste'
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
