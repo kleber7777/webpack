@@ -1,5 +1,8 @@
 <template lang="pug">
   #app
+    p {{ count }}
+    button(@click="decrement") menos
+    button(@click="increment") mais
     ul
       li
         router-link(to="calendar") Agenda
@@ -10,7 +13,20 @@
 
 <script>
   export default {
-    name: 'app'
+    name: 'app',
+    computed: {
+      count () {
+        return this.$store.state.count
+      }
+    },
+    methods: {
+      increment () {
+        this.$store.commit('increment')
+      },
+      decrement () {
+        this.$store.commit('decrement')
+      }
+    }
   }
 </script>
 
