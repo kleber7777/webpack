@@ -1,12 +1,10 @@
-<template>
-  <div class="calendar">
-    <h1>Agenda:</h1>
-    <input id="selector" type="text" v-model="msg">
-    <ul id="listServices">
-      <li v-for="serv in services">{{ serv.name }}</li>
-    </ul>
-    <button v-if="available" type="button" @click="checkout()">click</button>
-  </div>
+<template lang="pug">
+  .calendar
+    h1 Agenda:
+    input#selector(type="text" v-model="msg")
+    ul#listServices
+      li(v-for="serv in services") {{ serv.name }}
+    button(v-if="available" type="button" @click="checkout()") click
 </template>
 
 <script>

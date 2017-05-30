@@ -1,15 +1,11 @@
-<template>
-  <div id="app">
-    <ul>
-      <li>
-        <a href="#/calendar">Agenda</a>
-      </li>
-      <li>
-        <a href="#/clients">Clientes</a>
-      </li>
-    </ul>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    ul
+      li
+        a(href="#/calendar") Agenda
+      li
+        a(href="#/clients") Clientes
+    router-view
 </template>
 
 <script>
