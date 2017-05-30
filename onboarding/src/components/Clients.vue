@@ -1,17 +1,17 @@
 <template lang="pug">
   div
-    modal-new
+    router-view
     h1 Clientes: {{ msg }}
     input(id="selector" type="text" v-model="msg")
     ul
       li(v-for="serv in services") {{ serv.name }}
     button(v-if="available" type="button" @click="checkout()") Click
+    router-link(to="clients/modal") Modal
 </template>
 
 <script>
   import Moment from 'moment';
   import Inputmask from 'inputmask';
-  import ModalNew from '@/components/ModalNew';
 
   export default {
     name: 'clients',
@@ -38,12 +38,7 @@
 
         const im = new Inputmask('99-9999999');
         im.mask(selector);
-
-        ModalNew.methods.openModal();
       },
-    },
-    components: {
-      ModalNew,
     },
   };
 </script>

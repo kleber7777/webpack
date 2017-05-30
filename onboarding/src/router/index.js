@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Hello from '@/components/Hello';
 import Calendar from '@/components/Calendar';
 import Clients from '@/components/Clients';
+import ModalNew from '@/components/ModalNew';
 
 Vue.use(Router);
 
@@ -22,6 +23,12 @@ export default new Router({
       path: '/clients',
       name: 'Clients',
       component: Clients,
+      children: [
+        {
+          path: 'modal',
+          component: ModalNew,
+        },
+      ],
     },
   ],
 });
