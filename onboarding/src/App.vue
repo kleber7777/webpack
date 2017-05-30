@@ -1,6 +1,8 @@
 <template lang="pug">
   #app
     p {{ count }}
+    ul
+      li(v-for="tt in todos") {{ tt.id }}
     button(@click="decrement") menos
     button(@click="increment") mais
     ul
@@ -12,12 +14,15 @@
 </template>
 
 <script>
+  import { mapState, mapGetters } from 'vuex'
+
   export default {
     name: 'app',
     computed: {
-      count () {
-        return this.$store.state.count
-      }
+      ...mapState(['count']),
+      ...mapGetters({
+        todos: 'doneTodos'
+      })
     },
     methods: {
       increment () {
