@@ -2,9 +2,9 @@
   #app
     ul
       li
-        a(href="#/calendar") Agenda
+        router-link(to="calendar") Agenda
       li
-        a(href="#/clients") Clientes
+        router-link(to="clients") Clientes
     router-view
 </template>
 
