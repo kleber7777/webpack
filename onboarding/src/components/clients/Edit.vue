@@ -1,5 +1,7 @@
 <template lang="pug">
-  p {{ client.name }}
+  form
+    input(v-model="client.name")
+    button Enviar
 </template>
 
 <script>
@@ -13,7 +15,8 @@
       }),
       client () {
         let id = parseInt(this.$route.params.id)
-        return this.clients.find((c) => c.id === id) || {}
+        let cCopy = this.clients.find((c) => c.id === id) || {}
+        return {...cCopy}
       }
     }
   }
