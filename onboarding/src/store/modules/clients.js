@@ -17,7 +17,13 @@ const actions = {
 
 // mutations
 const mutations = {
-
+  updateClient (state, client) {
+    state.clients.filter(function (c) {
+      if (c.id === client.id) {
+        c.name = client.name
+      }
+    })
+  }
 }
 
 export default {

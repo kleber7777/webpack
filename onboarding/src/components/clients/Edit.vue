@@ -1,7 +1,7 @@
 <template lang="pug">
   form
     input(v-model="client.name")
-    button Enviar
+    button(@click="updateClient") Enviar
 </template>
 
 <script>
@@ -17,6 +17,12 @@
         let id = parseInt(this.$route.params.id)
         let cCopy = this.clients.find((c) => c.id === id) || {}
         return {...cCopy}
+      }
+    },
+    methods: {
+      updateClient (e) {
+        e.preventDefault()
+        this.$store.commit('updateClient', this.client)
       }
     }
   }
