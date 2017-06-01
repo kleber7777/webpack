@@ -4,7 +4,9 @@
     h1 Clientes:
 
     ul
-      li(v-for="c in clients") {{ c.name }}
+      li(v-for="c in clients")
+        | {{ c.name }}
+        router-link(:to="{ path: 'clients/edit/' + c.id }") Edit
 
     ul
       li(v-for="sc in serviceCategories") {{ sc.name }}
