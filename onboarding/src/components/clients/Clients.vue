@@ -1,44 +1,27 @@
 <template lang="pug">
   div
     router-view
-    h1 Clientes: {{ msg }}
-    input(id="selector" type="text" v-model="msg")
+    h1 Clientes:
+
     ul
-      li(v-for="serv in services") {{ serv.name }}
-    button(v-if="available" type="button" @click="checkout()") Click
+      li(v-for="c in clients") {{ c.name }}
+
+    ul
+      li(v-for="sc in serviceCategories") {{ sc.name }}
+
     router-link(to="clients/modal") Modal
 </template>
 
 <script>
-  import Moment from 'moment'
-  import Inputmask from 'inputmask'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'clients',
-    data () {
-      return {
-        msg: Moment().format(),
-        available: true,
-        services: [
-          {
-            name: 'servico 1'
-          },
-          {
-            name: 'servico 2'
-          }
-        ]
-      }
-    },
-    methods: {
-      checkout () {
-        this.msg = 'trocou!!!'
-        this.services.push({ name: 'servico 3' })
-
-        const selector = document.getElementById('selector')
-
-        const im = new Inputmask('99-9999999')
-        im.mask(selector)
-      }
+    computed: {
+      ...mapGetters({
+        clients: 'getClients',
+        serviceCategories: 'getServiceCategories'
+      })
     }
   }
 </script>

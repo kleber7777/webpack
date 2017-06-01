@@ -1,24 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import clients from './modules/clients'
+import services from './modules/services'
 
 Vue.use(Vuex)
 
+const debug = process.env.NODE_ENV !== 'production'
+
 export default new Vuex.Store({
-  state: {
-    count: 0,
-    todos: [
-      { id: 1, done: true },
-      { id: 2, done: false },
-      { id: 3, done: true }
-    ]
+  modules: {
+    clients,
+    services
   },
-  mutations: {
-    increment: state => (state.count += 1),
-    decrement: state => (state.count -= 1)
-  },
-  getters: {
-    doneTodos: state => {
-      return state.todos.filter(todo => todo.done)
-    }
-  }
+  strict: debug
 })
